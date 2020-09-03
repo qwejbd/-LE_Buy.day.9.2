@@ -5,7 +5,7 @@ const Del = {
   },
   mutations: {
     DETAILS(state, item) {
-      // state.details = [...item];
+      state.details = [...item]
     },
   },
   actions: {
@@ -13,8 +13,8 @@ const Del = {
       //   state.details = [...item];
       HomeDel({ goodsId: goodsId })
         .then((res) => {
-          console.log(res);
-          context.commit("DETAILS", res);
+          console.log(res.data);
+          context.commit("DETAILS", res.data);
         })
         .catch((err) => {
           console.log(err);

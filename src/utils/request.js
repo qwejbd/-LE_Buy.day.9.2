@@ -1,6 +1,7 @@
 import axios from "axios";
-import store from "@/store";
+import store from "@/store/index";
 import { Toast } from "vant";
+// import from "../store/index"
 // 根据环境不同引入不同api地址
 // import { baseApi } from '@/config'
 // const { baseApi } = require("../config/env." + process.env.NODE_ENV + ".js");
@@ -22,8 +23,11 @@ service.interceptors.request.use(
         forbidClick: true,
       });
     }
-    if (store.getters.token) {
-      config.headers["X-Token"] = "";
+    // if (store.getters.token) {
+    //   config.headers["X-Token"] = "";
+    // }
+    if (store.state.token) {
+      config.headers.token = store.state.token;
     }
     return config;
   },
