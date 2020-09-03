@@ -18,6 +18,7 @@ import {
   Sidebar,
   SidebarItem,
   Form,
+  CellGroup,
   Field,
 } from "vant";
 Vue.use(Button);
@@ -37,3 +38,5 @@ Vue.use(Sidebar);
 Vue.use(SidebarItem);
 Vue.use(Form);
 Vue.use(Field);
+Vue.use(Cell);
+Vue.use(CellGroup);

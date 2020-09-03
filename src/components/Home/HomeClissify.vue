@@ -47,7 +47,8 @@ export default {
   methods: {
     goDel(goodsId) {
       this.$router.push({
-        name: "HomeDetails",
+        // name: "HomeDetails",
+        name: "details",
         query: {
           goodsId: goodsId,
         },

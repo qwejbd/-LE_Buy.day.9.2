@@ -65,6 +65,7 @@ export default {
     },
   },
   mounted() {
+    
     this.$store.dispatch("CLASSIFY_ONE_NAV");
   },
   computed: {
