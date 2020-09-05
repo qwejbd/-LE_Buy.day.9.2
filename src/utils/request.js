@@ -23,9 +23,8 @@ service.interceptors.request.use(
         forbidClick: true,
       });
     }
-    // if (store.getters.token) {
-    //   config.headers["X-Token"] = "";
-    // }
+    // config.headers.token =
+    //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbklEIjoiMSIsIm5iZiI6MTU5OTE5OTY3OSwiZXhwIjoxNTk5MjEwNDc5LCJpc3MiOiJPY3RvYmVyIiwiYXVkIjoiU2hvcEFwcF9BUEkifQ.gqwYN9YavlNVS3OxzOXuyPgMrYdMNRiIEjQABDId3xc";
     if (store.state.token) {
       config.headers.token = store.state.token;
     }

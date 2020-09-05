@@ -14,7 +14,6 @@
       </div>
       <div class="Right">
         <div class="Top">
-          
           <div v-for="(item, index) in classTop" :key="index">
             <span :class="{ active: INDX === index }" @click="Click(index)">
               {{ item }}
@@ -64,8 +63,10 @@ export default {
       console.log(index);
     },
   },
+  created() {
+    this.Two[85];
+  },
   mounted() {
-    
     this.$store.dispatch("CLASSIFY_ONE_NAV");
   },
   computed: {

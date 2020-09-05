@@ -16,8 +16,8 @@
             >
             <s>{{ content1.goodsOldPrice }}</s>
           </p>
-        </div>
-      </van-tab>
+        </div> </van-tab
+      >s
       <van-tab title="评论 ">
         <div class="yanchibipei">
           <div v-for="(item, index) in icondata" :key="index">
@@ -30,15 +30,15 @@
         </van-cell-group>
         <van-divider />
         <div class="comment2">
-          <img :src="coment.comment_body.user_img" class="conmmentImg" alt="" />
+          <!-- <img :src="coment.comment_body.user_img" class="conmmentImg" alt="" />
           <p>{{ coment.comment_body.content }}</p>
-          <p>{{ coment.comment_body.modified_time }}</p>
-          <img
+          <p>{{ coment.comment_body.modified_time }}</p> -->
+          <!-- <img
             :src="coment1.comment_body.user_img"
             class="conmmentImg"
             alt=""
           />
-          <p>{{ coment1.comment_body.content }}</p>
+          <p>{{ coment1.comment_body.content }}</p> -->
         </div>
         <p>1</p>
         <div class="merchant">
@@ -54,19 +54,20 @@
       <van-tab title="详情 ">
         <div class="myhtml" v-html="content1.goodsIntroduce"></div>
       </van-tab>
-      <van-tab title="推荐 "> 内容 {{ index }} </van-tab>
+      <van-tab title="推荐 "> 内容 </van-tab>
     </van-tabs>
-
+    <!-- 最下面的购买商品的导航 -->
+    <FooterTaber @goCart="goCart" @cart="cart"></FooterTaber>
+    <!-- 返回顶部的组件 -->
     <ScrollTop></ScrollTop>
-    <FooterTaber></FooterTaber>
   </div>
 </template>
 
 <script>
 import { HomeDel } from "@/api/user";
-
 import FooterTaber from "../../components/Home/FooterTaber";
 import ScrollTop from "../../components/ScrollTop";
+
 export default {
   components: {
     FooterTaber,
@@ -74,32 +75,43 @@ export default {
   },
   data() {
     return {
-      headers: ["商品", "评论", "详情", "推荐"],
       content1: {},
       icondata: [],
       content2: {},
-      coment: {},
-      coment1: {},
+      // num: 1,
+      id: "",
     };
   },
   methods: {
     back() {
       window.history.back();
     },
+    goCart() {
+      // alert("d");
+      this.$store.dispatch("ADDCART", this.id);
+      this.$store.dispatch("GAINCART");
+    },
+    cart() {
+      // alert("wd")
+      this.$router.push({
+        name: "Cart",
+      });
+    },
   },
   mounted() {
+    // console.log(content1.goodsPrice);
+
     let id = this.$route.query.goodsId;
-    console.log(id);
     HomeDel({
       goodsId: id,
     }).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       this.content1 = res.data[0];
       this.content2 = res.data[1];
       this.content3 = res.data[3][0];
       this.icondata = res.data[2];
-      this.coment = res.data[3][0];
-      this.coment1 = res.data[3][1];
+      // this.coment = res.data[3][0];
+      // this.coment1 = res.data[3][1];
     });
   },
 };

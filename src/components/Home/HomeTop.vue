@@ -5,7 +5,7 @@
         <div>
           <img src="../../assets/img/home/LE_logo_2.png" width="230px" alt="" />
         </div>
-        <van-search v-model="value" placeholder="请输入搜索关键词" />
+        <van-search @focus="goSearch" placeholder="请输入搜索关键词" />
       </div>
     </van-sticky>
   </div>
@@ -13,10 +13,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      value: "",
-    };
+  methods: {
+    goSearch() {
+      this.$router.push({
+        name: "search",
+      });
+    },
   },
 };
 </script>

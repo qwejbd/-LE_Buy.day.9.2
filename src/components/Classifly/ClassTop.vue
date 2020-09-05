@@ -5,7 +5,7 @@
         <div class="title">
           商品分类
         </div>
-        <van-search v-model="value" placeholder="请输入搜索关键词" />
+        <van-search @focus="goSearch" placeholder="请输入搜索关键词" />
       </div>
     </van-sticky>
   </div>
@@ -13,10 +13,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      value: "",
-    };
+  methods: {
+    goSearch() {
+      this.$router.push({
+        name: "search",
+      });
+    },
   },
 };
 </script>

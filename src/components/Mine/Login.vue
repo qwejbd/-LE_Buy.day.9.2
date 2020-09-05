@@ -27,6 +27,7 @@ export default {
       let params = {
         LoginName: this.user,
         LoginPassword: this.password,
+        isPassing: "yes",
       };
       params.LoginPassword = md5(params.LoginPassword);
       axios
@@ -35,7 +36,8 @@ export default {
           qs.stringify(params)
         )
         .then((res) => {
-          // console.log(res);
+          // console.log(res);expires
+          console.log(res.data.tnToken.expires);
           this.setToken(res.data.tnToken.tokenStr);
           this.$router.push("/home");
         });

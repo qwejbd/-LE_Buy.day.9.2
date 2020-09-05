@@ -8,6 +8,7 @@ export function Swiper(data) {
     url: api.HomeSwiper,
     method: "get",
     data,
+    hideloading: false,
   });
 }
 // 首页分类
@@ -16,6 +17,7 @@ export function HomeList(params) {
     url: api.SwiperList,
     method: "get",
     params,
+    hideloading: false,
   });
 }
 // 首页商品详情
@@ -24,6 +26,7 @@ export function HomeDel(params) {
     url: api.details,
     method: "get",
     params,
+    hideloading: false,
   });
 }
 // 分类页面一级分类
@@ -32,6 +35,7 @@ export function classify(data) {
     url: api.classifyOne,
     method: "get",
     data,
+    hideloading: false,
   });
 }
 // 分类页面二级分类
@@ -40,6 +44,7 @@ export function classify2(params) {
     url: api.classIfyTwo,
     method: "get",
     params,
+    hideloading: false,
   });
 }
 // 验证手机号时候成功
@@ -48,6 +53,7 @@ export function LoginPhone(params) {
     url: api.Phone,
     method: "get",
     params,
+    hideloading: false,
   });
 }
 // 验证用户名是否可用
@@ -56,6 +62,7 @@ export function LoginUser(params) {
     url: api.UserName,
     method: "get",
     params,
+    hideloading: false,
   });
 }
 // 获取手机验证码
@@ -66,48 +73,47 @@ export function PhonePwd(params) {
     params,
   });
 }
-// //  注册接口
-// export function Register(params) {
-//   return request({
-//     url: api.Reg,
-//     method: "post",
-//     params,
-//   });
-// }
-//  登录接口
-// export function Login(params) {
-//   return request({
-//     url: api.LOGIN,
-//     method: "post",
-//     params,
-//   });
-// }
+//  热搜关键词
+export function SearchHot(params) {
+  return request({
+    url: api.Hot,
+    method: "get",
+    params,
+  });
+}
+//  搜索内容
+export function onSearch(params) {
+  return request({
+    url: api.onSearch,
+    method: "get",
+    params,
+  });
+}
+// 添加购物车
+export function addcart(params) {
+  return request({
+    url: api.addCart,
+    method: "post",
+    params,
+  });
+}
+// 获取购物车信息
+export function GainCart(data) {
+  return request({
+    url: api.gain,
+    method: "get",
+    data,
+    hideloading: false,
+  });
+}
+// 删除商品
+export function DelShop(params) {
+  return request({
+    url: api.Del,
+    method: "patch",
+    params,
+    hideloading: false,
+  });
+}
+
 // ===============================================================
-// 登录
-// export function login(data) {
-//   return request({
-//     url: api.Login,
-//     method: "post",
-//     data,
-//   });
-// }
-
-// // 用户信息 post 方法
-// export function getUserInfo(data) {
-//   return request({
-//     url: api.UserInfo,
-//     method: "post",
-//     data,
-//     hideloading: true,
-//   });
-// }
-
-// // 用户名称 get 方法
-// export function getUserName(params) {
-//   return request({
-//     url: api.UserName,
-//     method: "get",
-//     params,
-//     hideloading: true,
-//   });
-// }

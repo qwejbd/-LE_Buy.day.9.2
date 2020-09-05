@@ -70,11 +70,12 @@ export default {
       }
     },
     REG() {
-      if (this.sms == this.msg) {
+      // if (this.sms == this.msg) {
         let num = {
           LoginName: this.user,
           phone: this.tel,
           LoginPassword: this.password,
+          isPassing:'yes'
         };
         num.LoginPassword = md5(num.LoginPassword);
         axios
@@ -85,7 +86,7 @@ export default {
           .then((res) => {
             console.log(res);
           });
-      }
+      // }
     },
   },
   mounted() {},

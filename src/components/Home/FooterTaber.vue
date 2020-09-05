@@ -9,8 +9,8 @@
       </div>
       <div class="chirdren2">
         <div class="op">
-          <van-icon name="shop-collect-o" size="20" />
-          <span>店铺</span>
+          <van-icon name="cart-o" size="20" @click="cart" />
+          <span>购物车</span>
         </div>
       </div>
       <div class="chirdren3">
@@ -29,7 +29,11 @@
 export default {
   methods: {
     goCart() {
-      alert("d");
+      // alert("d");
+      this.$emit("goCart");
+    },
+    cart() {
+      this.$emit("cart");
     },
   },
 };

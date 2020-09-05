@@ -1,15 +1,13 @@
- <template>
-   <div>
-       我的页面
-   </div>
- </template>
+<template>
+  <div>
+   
+  </div>
+</template>
+
+<script>
+export default {
  
- <script>
- export default {
- 
- }
- </script>
- 
- <style>
- 
- </style>
+};
+</script>
+
+<style></style>
